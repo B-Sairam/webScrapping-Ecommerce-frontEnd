@@ -1,4 +1,4 @@
-import React,{useEffect,useContext,useState} from "react";
+import React,{useEffect,useState} from "react";
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import axios from 'axios';
@@ -12,7 +12,7 @@ import Mobiles from "./components/Mobiles";
 import Shelves from "./components/Shelves";
 import Shoes from "./components/Shoes";
 import Header from "./components/Header";
-import { Link } from "react-router-dom";
+
 
 export const product_context = React.createContext("");
 
