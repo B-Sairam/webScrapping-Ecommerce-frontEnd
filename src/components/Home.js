@@ -12,7 +12,7 @@ function Home() {
   {title:"Shoes for Men",img:'https://media.istockphoto.com/photos/running-shoes-picture-id1249496770?b=1&k=20&m=1249496770&s=170667a&w=0&h=_SUv4odBqZIzcXvdK9rqhPBIenbyBspPFiQOSDRi-RI=',link:'/shoes'},
   {title:"Furniture",img:'https://media.istockphoto.com/photos/wooden-chairs-at-table-in-bright-open-space-interior-with-lamp-next-picture-id968086564?k=20&m=968086564&s=612x612&w=0&h=dlB2NThpsLZliGMy_RAdjESDjFtgMgLWZjQnG_CchOM=',link:'/furniture'},
   {title:"Laptops",img:'https://cdn.mos.cms.futurecdn.net/6t8Zh249QiFmVnkQdCCtHK.jpg',link:'/laptops'},
-  {title:"Mobiles",img:'https://hamariweb.com/mobiles/info/img/442-22.jpg',link:'/mobiles'},
+  {title:"Mobiles",img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_BN4KjY9UE01pP509pq8qvJpFS0dlyBU31AXszP2VJ799m8geB08gTVnLWe4Z__QKs94&usqp=CAU',link:'/mobiles'},
   {title:"Shelves",img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQreQH2a9S8x9T1VW8rlkJ5w0LqrNY-ROrAJw&usqp=CAU',link:'/shelves'}]
   function changePath(data){
     console.log(data);
