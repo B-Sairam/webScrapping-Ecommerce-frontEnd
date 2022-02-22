@@ -1,6 +1,5 @@
-import React,{useContext,useState} from "react";
-import { product_context } from "../App";
-import SearchIcon from '@mui/icons-material/Search';
+import React from "react";
+
  
 function Header() {
   

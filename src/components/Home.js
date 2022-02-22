@@ -1,4 +1,4 @@
-import React,{useContext,useState} from "react";
+import React,{useContext} from "react";
 import { product_context } from "../App";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -16,20 +16,20 @@ function Home() {
   {title:"Shelves",img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQreQH2a9S8x9T1VW8rlkJ5w0LqrNY-ROrAJw&usqp=CAU',link:'/shelves'}]
   function changePath(data){
     console.log(data);
-    if(data == 'dress'){
+    if(data === 'dress'){
       navigate('/dress')
-    }  if(data == 'beauty'){
+    }  if(data === 'beauty'){
       navigate('/beauty')
-    }  if(data == 'shoes'){
+    }  if(data === 'shoes'){
       navigate('/shoes')
-    }  if(data == 'furniture'){
+    }  if(data === 'furniture'){
       navigate('/furniture')
-    }  if(data == 'laptops'){
+    }  if(data === 'laptops'){
       navigate('/laptops')
-    }  if(data == 'mobiles'){
+    }  if(data === 'mobiles'){
       navigate('/mobiles')
     } 
-     if(data == 'shelves'){
+     if(data === 'shelves'){
       navigate('/shelves')
     }
 
@@ -51,21 +51,25 @@ function Home() {
       <div className="main-cards">
         
       {
-         product?.filter((val)=>{
-          if(context.searchItem==""){
-            return val
-          }else if(val.title.toLowerCase().includes(context.searchItem.toLowerCase())){
-            return val
-          }
-         }).map((e,i)=>{
-        return <Link className="link" key={i} to={e.link}>
-        
-           <div className="product-box">
-             <img src={e.img}/><div className="box">{e.title}</div>
-           </div>
-
-        </Link>
-         })
+        product.filter?
+         product.filter(val=>val.title.toLowerCase().includes(context.searchItem.toLowerCase())).map((e,i)=>{
+          return <Link className="link" key={i} to={e.link}>
+          
+             <div className="product-box">
+               <img src={e.img} alt="img"/><div className="box">{e.title}</div>
+             </div>
+  
+          </Link>
+           }):
+           product.map((e,i)=>{
+            return <Link className="link" key={i} to={e.link}>
+            
+               <div className="product-box">
+                 <img src={e.img} alt="img"/><div className="box">{e.title}</div>
+               </div>
+    
+            </Link>
+             })
       }
       </div>
 
