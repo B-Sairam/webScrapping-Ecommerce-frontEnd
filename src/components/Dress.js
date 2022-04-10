@@ -25,7 +25,7 @@ function Dress() {
     <div className="main-cards">
         <Link to="/"><button className="btn btn-dark back-btn btn-sm">Back</button></Link>
         {displayProduct.filter? displayProduct.filter(val=>val.title.toLowerCase().includes(context.searchItem.toLowerCase())).map((e,i)=>{
-            return <div key={i}> <a href={e.link} className="link" >
+            return <div key={i}> <a href={e.link}  target="_blank" rel="noreferrer" className="link" >
               <div className="card md-col-3">
                 <img src={e.image} className="card-img-top img-size" alt="..."/>
                 <div className="card-body">
@@ -38,7 +38,7 @@ function Dress() {
               </a>
             </div>
             }):displayProduct.map((e,i)=>{
-              return <div key={i}> <a href={e.link} className="link" >
+              return <div key={i}> <a href={e.link}  target="_blank" rel="noreferrer" className="link" >
                 <div className="card md-col-3">
                   <img src={e.image} className="card-img-top img-size" alt="..."/>
                   <div className="card-body">
