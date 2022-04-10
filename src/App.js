@@ -17,17 +17,24 @@ import Header from "./components/Header";
 export const product_context = React.createContext("");
 
 function App() {
+  useEffect(()=>{
+    getData();
+  },[])
+  let getData=async()=>{
+    let res =  await axios.get(env.API_URL);
+    let data =  await res.data.products_data;
+    
+        setProducts(data); 
+       
+        
+  }
   
   const [products,setProducts]=useState([]);
-  let [searchItem,setSearchItem]=useState('')
-    useEffect(()=>{
-      getData()
-    },[])
+  let [searchItem,setSearchItem]=useState('');
+   
+
+   
  
-    let getData= async()=>{
-    let res = await axios.get(env.API_URL)
-        setProducts(res.data.products_data); 
-  }
   let dress_pro = products.dress_product;
   let beauty_pro = products.beauty_product;
   let furniture_pro = products.furnitures_product;
@@ -39,15 +46,16 @@ function App() {
 
   return <>
     <Router>
-      <product_context.Provider value={{dress_pro,beauty_pro,furniture_pro,laptops_pro,mobile_pro,shelves_pro,shoes_pro,searchItem}}>
-        <Header/>
+    <Header/>
         <div className="container">
         <div className="search-bar form-group">
-          <input type="text" className="form-control" placeholder="Search products" onChange={(e)=>setSearchItem(e.target.value)} />
+          <input type="text"  className="form-control" placeholder="Search products" onChange={(e)=>setSearchItem(e.target.value)} />
          <button className="search-btn"><SearchIcon/></button>
         </div>
           
     </div>
+      <product_context.Provider value={{dress_pro,beauty_pro,furniture_pro,laptops_pro,mobile_pro,shelves_pro,shoes_pro,searchItem}}>
+        
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/beauty" element={<Beauty/>}/>

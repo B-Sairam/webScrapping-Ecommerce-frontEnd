@@ -5,7 +5,7 @@ function Header() {
   
   return <>
     <div className="head">
-        <h1>Style's wear</h1>
+        <h1>Web Scraper</h1>
     </div>
     </>
 

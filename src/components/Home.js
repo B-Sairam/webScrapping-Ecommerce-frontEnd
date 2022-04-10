@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 
 function Home() {
   let context = useContext(product_context)
+  if(context.dress_pro=== undefined){
+    console.log(false);
+  }else   console.log(true)
   let navigate = useNavigate();
   let product = [{title:'Beauty Products',img:'https://i.guim.co.uk/img/media/8dd53de9f75eec05f73f5b2baee3a43b67c40baf/0_0_5000_3000/master/5000.jpg?width=465&quality=45&auto=format&fit=max&dpr=2&s=5822b4385001d684e5d6133c72aced15',link:'/beauty'},
   {title:"Men's wear",img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKxwAprssPB2ocPCJL9tBvBeK_Wz6Chc_uAFNzt7EhMFnIjjFaTMcjSJOIFzw6ZHJoa-o&usqp=CAU',link:'/dress'},
@@ -36,6 +39,9 @@ function Home() {
    }
   
   return <>
+  {context.dress_pro=== undefined? <div className="spinner-con">
+  <h3>Loading</h3> &nbsp;
+    <span className="spinner"></span></div>:
     <div className="container">
     <select className="custom-select col-6" onChange={(e)=>changePath(e.target.value)}>
          <option>Categories</option>
@@ -75,7 +81,7 @@ function Home() {
 
 
        
-    </div>
+    </div>}
     </>
 
 }
