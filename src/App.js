@@ -12,6 +12,8 @@ import Mobiles from "./components/Mobiles";
 import Shelves from "./components/Shelves";
 import Shoes from "./components/Shoes";
 import Header from "./components/Header";
+import Authtentication from "./components/Authtentication";
+import ProtectRoute from "./Auth/ProtectRoute";
 
 
 export const product_context = React.createContext("");
@@ -20,6 +22,7 @@ function App() {
   useEffect(()=>{
     getData();
   },[])
+ 
   let getData=async()=>{
     let res =  await axios.get(env.API_URL);
     let data =  await res.data.products_data;
@@ -31,9 +34,18 @@ function App() {
   
   const [products,setProducts]=useState([]);
   let [searchItem,setSearchItem]=useState('');
+  const [user,setUser]=useState();
    
 
+  useEffect(()=>{
+    const customer = JSON.parse(localStorage.getItem("webscrapser"));
+    if(customer){
+      
+    }else{
+      setUser('')
+    }
    
+  },[user])
  
   let dress_pro = products.dress_product;
   let beauty_pro = products.beauty_product;
@@ -46,18 +58,23 @@ function App() {
 
   return <>
     <Router>
-    <Header/>
-        <div className="container">
-        <div className="search-bar form-group">
-          <input type="text"  className="form-control" placeholder="Search products" onChange={(e)=>setSearchItem(e.target.value)} />
-         <button className="search-btn"><SearchIcon/></button>
-        </div>
-          
-    </div>
-      <product_context.Provider value={{dress_pro,beauty_pro,furniture_pro,laptops_pro,mobile_pro,shelves_pro,shoes_pro,searchItem}}>
+      <product_context.Provider value={{user,setUser,dress_pro,beauty_pro,furniture_pro,laptops_pro,mobile_pro,shelves_pro,shoes_pro,searchItem}}>
+      {
+      user?<><Header/>
+      <div className="container">
+      <div className="search-bar form-group">
+        <input type="text"  className="form-control" placeholder="Search products" onChange={(e)=>setSearchItem(e.target.value)} />
+       <button className="search-btn"><SearchIcon/></button>
+      </div>
         
+    </div></>:""
+    }
       <Routes>
-        <Route path="/" element={<Home/>} />
+      <Route path="/" element={<Authtentication/>} />
+      <Route element={<ProtectRoute/>}>
+     
+       
+      <Route path="/home" element={<Home/>} />
         <Route path="/beauty" element={<Beauty/>}/>
         <Route path="/dress" element={<Dress/>} />
         <Route path="/furniture" element={<Furnitures/>}/>
@@ -65,6 +82,7 @@ function App() {
         <Route path="/mobiles" element={<Mobiles/>} />
         <Route path="/shelves" element={<Shelves/>} />
         <Route path="/shoes" element={<Shoes/>}/>
+        </Route>
       </Routes>
       </product_context.Provider>
     </Router>
