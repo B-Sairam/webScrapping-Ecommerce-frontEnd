@@ -10,7 +10,7 @@ const Authtentication = () => {
    
   return <>
      <div className='log-main'>
-     <div className='title-main'>
+     <div className='log-head'>
          WebScraper
         </div>
      <div className='auth-page '>

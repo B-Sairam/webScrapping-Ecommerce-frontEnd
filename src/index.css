@@ -22,13 +22,19 @@
  align-items: center;
  background-color: #f5f6f4;
 }
-.title-main{
+.log-head{
   font-size: 40px;
   font-family:cursive;
   color: rgb(69, 68, 68);
   font-weight:900;
+}
+/* .title{
+  font-size: 20px;
+  font-family:cursive;
+  color: rgb(69, 68, 68);
+  font-weight:900;
  
- }
+ } */
 
  .form-control:focus {
   box-shadow: none;
@@ -187,6 +193,10 @@ z-index: 2;
 .card-body > .title{
   max-height:50px;
   overflow: hidden;
+  font-size: 20px;
+  color: rgb(69, 68, 68);
+  font-weight:600;
+ 
 }
 .back-btn{
   position: absolute;
