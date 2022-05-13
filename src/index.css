@@ -22,18 +22,14 @@
  align-items: center;
  background-color: #f5f6f4;
 }
-.title{
+.title-main{
   font-size: 40px;
   font-family:cursive;
   color: rgb(69, 68, 68);
   font-weight:900;
  
  }
- .title span{
-   font-size: 50px;
-   color: #ff0000;
- 
- }
+
  .form-control:focus {
   box-shadow: none;
   
