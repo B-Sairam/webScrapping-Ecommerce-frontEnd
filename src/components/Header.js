@@ -22,7 +22,7 @@ function Header() {
           {
             user?<div style={{display:"flex",flexDirection:"row",alignItems:"center",gap:"20px"}}>
               <h2 style={{fontSize:"21px"}}>{user.name}</h2>
-               <button className="logout" onClick={()=>logout()}>Logout</button>
+               <button className="logout" onClick={()=>logout()}>Logout</button> 
             </div>:""
           }
         </div>
