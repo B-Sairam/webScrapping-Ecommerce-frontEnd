@@ -18,9 +18,12 @@ function Header() {
   return <>
     <div className="head">
         <div className="head-row">
-          <h1>WebScraper</h1>
+          <h1 >WebScraper</h1>
           {
-            user?<button className="logout pt-2" onClick={()=>logout()}>Logout</button>:""
+            user?<div style={{display:"flex",flexDirection:"row",alignItems:"center",gap:"20px"}}>
+              <h2 style={{fontSize:"21px"}}>{user.name}</h2>
+               <button className="logout" onClick={()=>logout()}>Logout</button>
+            </div>:""
           }
         </div>
     </div>

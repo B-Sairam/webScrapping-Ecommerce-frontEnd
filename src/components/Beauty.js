@@ -61,7 +61,7 @@ function Beauty() {
           previousLinkClassName={'previousBttns'}
           nextLinkClassName={'nextBttn'}
           disabledClassName={'paginationDisabled'}
-          activeClassName={'paginationActive'}
+          // activeClassName={'paginationActive'}
         />
     </>
 

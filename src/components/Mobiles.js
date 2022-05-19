@@ -60,7 +60,7 @@ function Mobiles() {
           previousLinkClassName={'previousBttns'}
           nextLinkClassName={'nextBttn'}
           disabledClassName={'paginationDisabled'}
-          activeClassName={'paginationActive'}
+          // activeClassName={'paginationActive'}
         />
     </>
 
