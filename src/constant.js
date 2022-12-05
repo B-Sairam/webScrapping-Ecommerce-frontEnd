@@ -1,1 +1,1 @@
-export const BASE_URL = "https://movietickets-back-end.herokuapp.com/"
+export const BASE_URL = "https://web-scrapping-xobk.onrender.com/"
